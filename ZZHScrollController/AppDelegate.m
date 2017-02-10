@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ZZHScrollController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    ZZHScrollController * scroll = [[ZZHScrollController alloc] init];
+    scroll.title = @"仿网易新闻";
+    UINavigationController * naVc = [[UINavigationController alloc] initWithRootViewController:scroll];
+    self.window.rootViewController = naVc;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
